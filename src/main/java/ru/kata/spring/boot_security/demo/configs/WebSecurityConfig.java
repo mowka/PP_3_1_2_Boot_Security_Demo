@@ -72,7 +72,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             Role roleAdmin = new Role("ROLE_ADMIN");
 
             User admin1 = new User("admin1", "admin1", "admin1", "admin1"
-                    , 1, new HashSet<>(Arrays.asList(roleAdmin, roleUser)));
+                    , 1, new HashSet<>());
+            admin1.setRoles();
             userService.save(admin1);
 
             User user1 = new User("user1", "user1", "user1", "user1"
